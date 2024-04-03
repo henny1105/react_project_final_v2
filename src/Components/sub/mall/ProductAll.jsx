@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../../ProductCard';
 import { Container, Row, Col } from 'react-bootstrap';
-import { productAction } from './redux/actions/productAction';
+import { fetchProducts } from './redux/reducers/productSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const useWindowSize = () => {
-	const [size, setSize] = useState([window.innerWidth]);
+	const [size, setSize] = useState(window.innerWidth);
 	useEffect(() => {
 		const handleResize = () => {
-			setSize([window.innerWidth]);
+			setSize(window.innerWidth);
 		};
 		window.addEventListener('resize', handleResize);
 		return () => {
@@ -27,7 +27,7 @@ const ProductAll = () => {
 
 	const getProducts = async () => {
 		let searchQuery = query.get('q') || '';
-		dispatch(productAction.getProducts(searchQuery));
+		dispatch(fetchProducts(searchQuery));
 	};
 
 	useEffect(() => {
@@ -38,11 +38,12 @@ const ProductAll = () => {
 		<div>
 			<Container className='mall_project'>
 				<Row>
-					{productList.map((product) => (
-						<Col lg={width >= 1440 ? 2 : width <= 989 ? 3 : 3} key={product.id}>
-							<ProductCard item={product} />
-						</Col>
-					))}
+					{productList &&
+						productList.map((product) => (
+							<Col lg={width >= 1440 ? 2 : width <= 989 ? 3 : 3} key={product.id}>
+								<ProductCard item={product} />
+							</Col>
+						))}
 				</Row>
 			</Container>
 		</div>

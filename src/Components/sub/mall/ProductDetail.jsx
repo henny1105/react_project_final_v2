@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import SyncLoader from 'react-spinners/SyncLoader';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useDispatch, useSelector } from 'react-redux';
-import { productAction } from './redux/actions/productAction';
+import { fetchProductDetail } from './redux/reducers/productSlice';
 
 const ProductDetail = () => {
 	let { id } = useParams();
@@ -15,7 +15,7 @@ const ProductDetail = () => {
 
 	useEffect(() => {
 		if (id) {
-			dispatch(productAction.getProduct(id));
+			dispatch(fetchProductDetail(id));
 		}
 	}, [dispatch, id]);
 
