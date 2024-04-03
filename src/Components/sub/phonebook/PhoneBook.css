@@ -1,0 +1,47 @@
+.title {
+	text-align: center;
+	margin-bottom: 5rem;
+}
+.phone_book_box .row {
+	width: 100%;
+}
+.phone_book_box .form-control {
+	height: 4rem;
+}
+.phone_book_box .form-control::placeholder {
+	font-size: 1.5rem;
+}
+.phone_book_box .btn-primary {
+	height: 4rem;
+	width: 10rem;
+	font-size: 1.5rem;
+}
+.phone_book_box .container .col-lg-2 {
+	border: none;
+}
+.phone_book_box input {
+	font-size: 1.5rem;
+}
+.customer_box .row {
+	align-items: center;
+}
+.customer_box .row div {
+	font-size: 1.5rem;
+}
+.phone_book_box > .container > .row {
+	gap: 5rem;
+}
+.phone_book_box > .container {
+	height: auto;
+}
+.phone_book_box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+.phone_book_box .col-lg-5 {
+	display: flex;
+	gap: 1rem;
+}

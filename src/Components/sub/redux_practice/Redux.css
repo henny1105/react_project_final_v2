@@ -1,0 +1,30 @@
+.redux_box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.redux_box .increase {
+	color: #fff;
+	background-color: #28a745;
+	border-color: #28a745;
+}
+
+.redux_box .decrease {
+	color: #fff;
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+.redux_box .login_button {
+	color: #fff;
+	background-color: #000;
+	border-color: #000;
+}
+
+.redux_box .reset_button {
+	color: #fff;
+	background-color: #868686;
+	border-color: #868686;
+}

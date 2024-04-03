@@ -1,0 +1,27 @@
+.box {
+	border: 3px solid black;
+	width: 50rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.box.win {
+	border: 3px solid green;
+}
+
+.box.lose {
+	border: 3px solid rgb(255, 57, 67);
+}
+
+.item-img {
+	width: 40rem;
+	height: 40rem;
+	object-fit: cover;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
