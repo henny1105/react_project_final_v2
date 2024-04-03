@@ -30,16 +30,27 @@ const productSlice = createSlice({
 	name: 'product',
 	initialState,
 	reducers: {
+		// 상품 목록 로딩 시작
+		fetchProductsStart(state) {
+			state.loading = true;
+		},
+		// 상품 목록 로딩 성공
 		getAllProduct(state, action) {
 			state.productList = action.payload.data;
+			state.loading = false;
 		},
+		// 특정 상품 로딩 성공
 		getsingleProduct(state, action) {
 			state.selectedItem = action.payload.data;
+			state.loading = false;
+		},
+		// 상품 정보 로딩 실패
+		fetchProductsFailure(state) {
+			state.loading = false;
 		},
 	},
 });
 
-console.log(productSlice);
+export const { fetchProductsStart, getAllProduct, getsingleProduct, fetchProductsFailure } = productSlice.actions;
 
-export const productActions = productSlice.actions;
 export default productSlice.reducer;
