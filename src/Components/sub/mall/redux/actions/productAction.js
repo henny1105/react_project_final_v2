@@ -1,14 +1,17 @@
+import { productActions } from '../reducers/productReducer';
+
 function getProducts(searchQuery) {
 	return async (dispatch) => {
 		let url = `https://my-json-server.typicode.com/henny1105/react_project_final/products/?q=${searchQuery}`;
 		let response = await fetch(url);
 		let data = await response.json();
 
-		dispatch({ type: 'GET_PRODUCT_SUCCESS', payload: { data } });
+		// dispatch({ type: 'GET_PRODUCT_SUCCESS', payload: { data } });
+		dispatch(productActions.getAllProduct(data));
 	};
 }
 
-function getProduct(id) {
+function getPorductDetail(id) {
 	return async (dispatch) => {
 		dispatch({ type: 'GET_PRODUCT_DETAIL_START' });
 		try {
@@ -22,4 +25,4 @@ function getProduct(id) {
 	};
 }
 
-export const productAction = { getProducts, getProduct };
+export const productAction = { getProducts, getPorductDetail };
